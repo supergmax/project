@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 54, 69, 79;
+  --background-rgb: 245, 245, 240;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 245, 245, 240;
+    --background-rgb: 54, 69, 79;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 25 5% 18%;
+    --primary: 40 20% 75%;
+    --primary-foreground: 25 5% 18%;
+    --secondary: 0 65% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 200 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 25 5% 18%;
+    --neutral: 40 10% 30%;
+    --neutral-foreground: 0 0% 100%;
+  }
+  
+  .dark {
+    --background: 25 5% 18%;
+    --foreground: 40 20% 75%;
+    --primary: 40 10% 30%;
+    --primary-foreground: 40 20% 75%;
+    --secondary: 0 65% 40%;
+    --secondary-foreground: 0 0% 100%;
+    --accent: 200 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --muted: 25 5% 30%;
+    --muted-foreground: 40 20% 75%;
+    --neutral: 40 20% 75%;
+    --neutral-foreground: 25 5% 18%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+  
+  .animate-scale {
+    animation: scale 0.4s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
